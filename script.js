@@ -189,7 +189,7 @@ function renderSectionFunctional(content) {
       </div>
       ${s.regulationsLink ? `<a href="${s.regulationsLink}" target="_blank" class="regulations-link">Положение</a>` : ''}
       <div class="gallery">
-        ${(s.imageGallery||[]).map(img=>`<img src="${img}" alt="Игры">`).join('')}
+        ${(s.imageGallery||[]).map(img=>`<img src="${img}" alt="Игры" class="gallery-thumb" data-fullsrc="${img}">`).join('')}
       </div>
     </section>
   `;
@@ -245,7 +245,7 @@ function renderSectionProgram(content) {
       <div class="program-list">
         ${(s.schedule||[]).map(item=>`
           <div class="program-item">
-            <div class="program-time"><span class="program-dot"></span>${item.time}</div>
+            <div class="program-time">${item.time}</div>
             <div class="program-event">${item.event}</div>
           </div>`).join('')}
       </div>
@@ -286,6 +286,34 @@ function renderSectionPartners(content) {
       </div>
     </section>
   `;
+}
+
+// LIGHTBOX
+// Вставить после загрузки DOM
+if (typeof window !== 'undefined') {
+  document.addEventListener('DOMContentLoaded', () => {
+    document.body.addEventListener('click', function(e) {
+      const img = e.target.closest('.gallery-thumb');
+      if (img) {
+        e.preventDefault();
+        let overlay = document.createElement('div');
+        overlay.className = 'lightbox-overlay';
+        overlay.innerHTML = `<img src="${img.dataset.fullsrc || img.src}" class="lightbox-img" alt="">`;
+        document.body.appendChild(overlay);
+        setTimeout(() => overlay.classList.add('active'), 10);
+        function closeLightbox(ev) {
+          if (ev.type === 'keydown' && ev.key !== 'Escape') return;
+          if (ev.type === 'click' && ev.target !== overlay) return;
+          overlay.classList.remove('active');
+          setTimeout(() => overlay.remove(), 200);
+          document.removeEventListener('keydown', closeLightbox);
+          overlay.removeEventListener('click', closeLightbox);
+        }
+        document.addEventListener('keydown', closeLightbox);
+        overlay.addEventListener('click', closeLightbox);
+      }
+    });
+  });
 }
 
 // FOOTER
