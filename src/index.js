@@ -71,9 +71,9 @@ function renderHeader(content) {
     <header class="main-header">
       <div class="header-logos-burger">
         <div class="header-logos">
-          ${logos.moscowSport ? `<img src="${logos.moscowSport}" alt="Moscow Sport">` : ''}
-          ${logos.worldClass ? `<img src="${logos.worldClass}" alt="World Class">` : ''}
-          ${logos.yashankin ? `<img src="${logos.yashankin}" alt="Yashankin">` : ''}
+          ${logos.moscowSport ? `<img src="${logos.moscowSport}" alt="Московский спорт">` : ''}
+          ${logos.nasledie ? `<img src="${logos.nasledie}" alt="Наследие">` : ''}
+          ${logos.depsport ? `<img src="${logos.depsport}" alt="Департамент спорта Москвы">` : ''}
         </div>
         ${burger}
       </div>
@@ -89,57 +89,47 @@ function renderHeader(content) {
 
 // BANNER
 function renderBanner(content) {
-  const banner = content.banner || {};
-  if(banner.type === 'video') {
-    return `
-      <section id="banner" class="banner">
-        <video class="banner-video" autoplay loop muted playsinline poster="${banner.posterImage}">
-          <source src="${banner.source_mp4}" type="video/mp4">
-          <source src="${banner.source_webm}" type="video/webm">
-          Ваш браузер не поддерживает видео.
-        </video>
-        <div class="banner-video-red"></div>
-        <div class="banner-overlay">
-          <h1>${banner.title || ''}</h1>
-          <div class="banner-date">${banner.dateText || ''}</div>
-          ${banner.ctaButtonText ? `<a href="${banner.ctaButtonLink}" class="banner-cta">${banner.ctaButtonText}</a>` : ''}
-        </div>
-      </section>
-    `;
-  } else if(banner.type === 'image') {
-    return `
-      <section id="banner" class="banner">
-        <img src="${banner.posterImage}" alt="Banner" class="banner-img">
-        <div class="banner-overlay">
-          <h1>${banner.title || ''}</h1>
-          <div class="banner-date">${banner.dateText || ''}</div>
-          ${banner.ctaButtonText ? `<a href="${banner.ctaButtonLink}" class="banner-cta">${banner.ctaButtonText}</a>` : ''}
-        </div>
-      </section>
-    `;
-  }
-  return '';
-}
-
-// ABOUT
-function renderSectionAbout(content) {
-  const about = content.aboutFestival || {};
+  const b = content.banner || {};
   return `
-    <section id="about" class="section about">
-      <h2>${about.title || ''}</h2>
-      <p>${about.description || ''}</p>
-      <ul class="goals">
-        ${(about.goals||[]).map(g=>`<li>${g}</li>`).join('')}
-      </ul>
-      <ul class="why-participate">
-        ${(about.whyParticipatePoints||[]).map(p=>`<li>${p}</li>`).join('')}
-      </ul>
+    <section class="section section-accent banner">
+      <div class="container">
+        <div class="banner-inner" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; padding: 2.5rem 1.5rem; gap: 2rem;">
+          <div class="banner-text" style="flex:1; min-width:260px; color: #fff;">
+            <h1 style="font-size: 2.8rem; font-family: var(--font-heading); font-weight: 900; margin-bottom: 1rem; line-height: 1.1;">${b.title || ''}</h1>
+            <div class="banner-date" style="font-size:1.4rem; font-weight:600; margin-bottom:0.5rem;">${b.dateText || ''}</div>
+            ${b.locationText ? `<div class="banner-location" style="font-size:1.05rem; font-weight:500; opacity:0.85; margin-bottom:1.2rem; line-height:1.35;">${(b.locationText||'').replace(/\n/g,'<br>')}</div>` : ''}
+            <a href="${b.ctaButtonLink || '#'}" class="main-btn banner-cta-turquoise" style="background: var(--color-title); font-size:1.25rem; border-radius: 20px; padding: 0.75rem 2.2rem; box-shadow: 0 2px 12px rgba(43,211,225,0.14);">${b.ctaButtonText || ''}</a>
+          </div>
+          <div class="banner-media" style="flex:1; min-width:260px; display:flex; align-items:center; justify-content:center;">
+            <img src="assets/images/3d/MusculeCat2.png" alt="Muscle Cat" style="max-width:340px; border-radius: 24px; box-shadow: 0 4px 24px rgba(0,0,0,0.3);">
+          </div>
+        </div>
+      </div>
     </section>
   `;
 }
 
-// FAMILY SPORT
-//function renderSectionFamily(content) {
+// ABOUT
+function renderSectionAbout(content) {
+  const s = content.aboutFestival || {};
+  return `
+    <section id="about" class="section section-bg-dark about-section">
+      <div class="container">
+        <h2 class="about-title">${s.title || ''}</h2>
+        <div class="about-desc">${s.description || ''}</div>
+        <ul style="margin-bottom:1.2rem;">
+          ${(s.points || []).map(point => `<li>${point}</li>`).join('')}
+        </ul>
+        <div class="about-why">
+          <h3 class="about-why-title">Почему стоит участвовать?</h3>
+          <ul class="about-why-list">
+            ${(s.whyParticipatePoints || []).map(point => `<li >${point}</li>`).join('')}
+          </ul>
+        </div>
+      </div>
+    </section>
+  `;
+}
   // const s = content.familySportSection || {};
   // return `
   //   <section id="familySport" class="section family">
@@ -172,7 +162,7 @@ function renderSectionFunctional(content) {
       <div class="participants-info">${s.participantsInfo ? `${s.participantsInfo.total}, ${s.participantsInfo.spectators}` : ''}</div>
       <div class="formats">
         <b>Форматы:</b>
-        <div class="format-cards">
+        <div class="format-cards format-cards-center">
           ${(s.formats||[]).map(f=>`
             <div class="format-card">
               <div class="format-icon">${f.name.includes('Команд') ? '🏆' : '🥇'}</div>
@@ -213,7 +203,7 @@ function renderSectionFunctional(content) {
 function renderSectionSpectators(content) {
   const s = content.spectatorsSection || {};
   return `
-    <section id="spectatorsInfo" class="section spectators">
+    <section id="spectatorsInfo" class="section section-dark spectators">
       <h2>${s.title||''}</h2>
       <p>${s.description||''}</p>
       <ul>${(s.activities||[]).map(a=>`<li>${a}</li>`).join('')}</ul>
@@ -242,7 +232,7 @@ function renderSectionRegistration(content) {
 function renderSectionProgram(content) {
   const s = content.eventProgram || {};
   return `
-    <section id="program" class="section program">
+    <section id="program" class="section section-orange program">
       <h2>${s.title||''}</h2>
       <div class="program-list">
         ${(s.schedule||[]).map(item=>`

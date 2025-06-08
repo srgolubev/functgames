@@ -6,11 +6,24 @@
   <!-- Preconnect and load Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
-  <title>Moscow Functional Games World Class</title>
+  
+  <title>Московские Функциональные Игры</title>
+  <style>
+    @font-face {
+      font-family: 'Unbounded';
+      src: url('assets/fonts/Unbounded/Unbounded-VariableFont_wght.woff') format('woff');
+      font-weight: 100 900;
+      font-style: normal;
+      font-display: swap;
+    }
+    body, h1, h2, h3, h4, h5, h6, .unbounded {
+      font-family: 'Unbounded', sans-serif !important;
+    }
+  </style>
 </head>
 <body>
   <!-- Контент будет динамически подгружаться с помощью JS -->
   <div id="app"></div>
+  <script src="src/index.js" type="module"></script>
 </body>
 </html>
