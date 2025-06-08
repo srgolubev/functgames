@@ -1,3 +1,5 @@
+require('./style.css');
+
 document.addEventListener('DOMContentLoaded', async () => {
   const app = document.getElementById('app');
   let content = {};
