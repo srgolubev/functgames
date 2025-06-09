@@ -1,6 +1,6 @@
 {
   "general": {
-    "eventName": "Спортивный Фестиваль 'Мама, Папа, Я' и Московские Функциональные Игры World Class",
+    "eventName": "Игры Москвы",
     "date": "5 июля 2025",
     "location": "ОК «Лужники», Южное Спортивное Ядро, Москва",
     "mainTagline": "Спорт, доступный каждому!",
@@ -81,8 +81,8 @@
       ]
     },
     "imageGallery": [
-      "assets/images/WCG.jpg",
-      "assets/images/WCG_2.jpg"
+      "assets/images/family_event_image1.jpeg",
+      "assets/images/family_event_image2.jpeg"
     ]
   },
   "spectatorsSection": {
