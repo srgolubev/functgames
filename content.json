@@ -8,7 +8,7 @@
   },
   "logos": {
     "moscowSport": "assets/images/logo/moscow_sport_logo.png",
-    "worldClass": "assets/images/logo/world_class_logo.png",
+
     "yashankin": "assets/images/logo/yashankin_logo.png",
     "fbbm": "assets/images/logo/fbbm_logo.png"
   },
@@ -44,8 +44,7 @@
       "Испытайте себя в уникальных спортивных испытаниях!",
       "Проведите незабываемый день всей семьей, полный веселья и активностей.",
       "Получите яркие эмоции и ценные призы.",
-      "Станьте частью большого спортивного праздника Москвы.",
-      "Встретьтесь со звездами спорта и экспертами ЗОЖ."
+      "Станьте частью большого спортивного праздника Москвы."
     ]
   },
   "functionalGamesSection": {
@@ -56,7 +55,7 @@
       {
         "name": "Командный зачет",
         "description": "Соревнование для команд из 4 человек, включая минимум одну женщину. Включает тренера-капитана.",
-        "details": "Команда: 4 человека (минимум 1 женщина). Капитан – тренер фитнес-клуба. 120 команд. WC квота: 50 команд. Макс. время: 10 мин."
+        "details": "Команда: 5 человек (минимум 1 женщина). Капитан – тренер фитнес-клуба. 120 команд. WC квота: 50 команд. Макс. время: 10 мин."
       },
       {
         "name": "Индивидуальный зачет",
@@ -65,7 +64,6 @@
       }
     ],
     "participantRequirements": [
-      "Клиенты или сотрудники фитнес-клубов Москвы",
       "Возраст: 18+",
       "Не допускаются действующие профессиональные спортсмены"
     ],
@@ -110,8 +108,8 @@
   "registrationSection": {
     "title": "Регистрация",
     "rules": [
-      "Участие в соревнованиях («Московские Функциональные Игры» и «Мама, Папа, Я») бесплатное.",
-      "Для «Московских Функциональных Игр» возраст участников – старше 18 лет.",
+      "Участие в соревнованиях («Игры Москвы» и «Мама, Папа, Я») бесплатное.",
+      "Для «Игр Москвы» возраст участников  старше 18 лет.",
       "Для «Мама, Папа, Я» возрастные категории детей: 4-7, 8-12, 13-16 лет.",
       "Необходима предварительная регистрация.",
       "Информация о медицинской справке будет предоставлена дополнительно."
@@ -148,7 +146,7 @@
     "title": "Наши Партнеры",
     "partners": [
       {"name": "Департамент спорта города Москвы", "logo": "assets/images/logo/moscow_sport_logo.png", "link": "https://sport.mos.ru/"},
-      {"name": "World Class", "logo": "assets/images/logo/world_class_logo.png", "link": "https://www.worldclass.ru/"},
+      {"name": "Crocus Fitness", "logo": "assets/images/logo/Сrocus_Fitness_logo.png", "link": "https://crocusfitness.com/"},
       {"name": "Foreman Products", "logo": "assets/images/logo/foreman_logo.png", "link": "https://www.foremanfitness.ru/"},
       {"name": "ФББМ", "logo": "assets/images/logo/fbbm_logo.webp", "link": "https://fbbm.ru/"}
     ]
@@ -159,16 +157,10 @@
   },
   "imageSources": {
     "generalFestival": [
-        "path/to/source3_top_banner.png",
-        "path/to/source3_world_class_runners.png"
+        "assets/images/banner_poster_image.jpg"
     ],
-    "certificates": ["path/to/source1_certificate.png"],
-    "stageVisual": ["path/to/source26_stage.png"]
-  },
-  "videoSources":{
-    "moscowSportDayArchive": "https://disk.yandex.ru/d/ZvkPRThzpwnObg",
-    "worldClassVideo1": "https://disk.yandex.ru/d/y2QOUx8OqfFK8g/%D0%9E%D1%82%D0%BA%D1%80%D1%8B%D1%82%D0%B8%D0%B5%20%D0%98%D0%B3%D1%80%202019.mp4",
-    "worldClassVideo2": "https://drive.google.com/file/d/1Hzy85WFOo-_IdCGgtzty_NRA_pMFt8Qz/view?usp=sharing"
+    "certificates": ["assets/images/WCG.jpg"],
+    "stageVisual": ["assets/images/WCG_2.jpg"]
   },
   "stylePreferences":{
     "primaryColor": "red",

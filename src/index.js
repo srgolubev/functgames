@@ -120,12 +120,17 @@ function renderSectionAbout(content) {
         <ul style="margin-bottom:1.2rem;">
           ${(s.points || []).map(point => `<li>${point}</li>`).join('')}
         </ul>
-        <div class="about-why">
-          <h3 class="about-why-title">Почему стоит участвовать?</h3>
-          <ul class="about-why-list">
-            ${(s.whyParticipatePoints || []).map(point => `<li >${point}</li>`).join('')}
-          </ul>
-        </div>
+        <div class="about-why-row">
+  <div class="about-why-dumbbell-col">
+    <img src="assets/images/3d/Гантеля.png" alt="Гантеля" class="about-why-dumbbell">
+  </div>
+  <div class="about-why">
+    <h3 class="about-why-title">Почему стоит участвовать?</h3>
+    <ul class="about-why-list">
+      ${(s.whyParticipatePoints || []).map(point => `<li >${point}</li>`).join('')}
+    </ul>
+  </div>
+</div>
       </div>
     </section>
   `;
@@ -234,13 +239,15 @@ function renderSectionProgram(content) {
   return `
     <section id="program" class="section section-orange program">
       <h2>${s.title||''}</h2>
-      <div class="program-list">
-        ${(s.schedule||[]).map(item=>`
-          <div class="program-item">
-            <div class="program-time">${item.time}</div>
-            <div class="program-event">${item.event}</div>
-          </div>`).join('')}
-      </div>
+      <table class="schedule-table">
+        <tbody>
+          ${(s.schedule||[]).map(item=>`
+            <tr>
+              <td class="schedule-time">${item.time}</td>
+              <td class="schedule-event">${item.event}</td>
+            </tr>`).join('')}
+        </tbody>
+      </table>
     </section>
   `;
 }
@@ -273,8 +280,14 @@ function renderSectionPartners(content) {
   return `
     <section id="partners" class="section partners">
       <h2>${s.title||''}</h2>
-      <div class="partners-logos">
-        ${(s.partners||[]).map(p=>`<a href="${p.link||'#'}" target="_blank"><img src="${p.logo}" alt="${p.name}"></a>`).join('')}
+      <div class="partners-list">
+        ${(s.partners||[]).map(p=>`
+          <div class="partner-card">
+            <a href="${p.link||'#'}" target="_blank" rel="noopener">
+              <img src="${p.logo}" alt="${p.name}">
+            </a>
+          </div>
+        `).join('')}
       </div>
     </section>
   `;

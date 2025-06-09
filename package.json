@@ -7,6 +7,8 @@
     "start": "webpack serve --mode development",
     "build": "webpack --mode production",
     "test": "echo \"Error: no test specified\" && exit 1",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "lint:js": "eslint .",
     "lint:css": "stylelint \"**/*.css\"",
     "format": "prettier --write \"**/*.{js,css,html,json,md}\""
@@ -30,6 +32,7 @@
     "eslint-config-prettier": "^10.1.5",
     "eslint-plugin-prettier": "^5.4.0",
     "file-loader": "^6.2.0",
+    "gh-pages": "^6.3.0",
     "html-webpack-plugin": "^5.6.3",
     "husky": "^9.1.7",
     "lint-staged": "^16.1.0",
