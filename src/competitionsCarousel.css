@@ -69,10 +69,11 @@
   flex: 1;
 }
 .competitions-card-links {
-  margin-top: 12px;
+  margin-top: 18px;
   display: flex;
-  gap: 12px;
+  flex-direction: column;
   align-items: center;
+  gap: 10px;
 }
 .competitions-card-link {
   color: var(--primary-red);
@@ -83,11 +84,11 @@
 }
 .competitions-card-link:hover {
   color: #b8000a;
-  text-decoration: underline;
+  text-decoration: none;
 }
 .competitions-card-btn {
-  margin-left: auto;
   background: var(--primary-red);
+  text-decoration: none !important;
   color: #fff;
   border: none;
   border-radius: 10px;
@@ -99,9 +100,38 @@
   text-transform: uppercase;
   box-shadow: 0 2px 8px rgba(227,6,19,0.07);
 }
-.competitions-card-btn:hover {
+.competitions-card-btn:hover,
+.competitions-card-btn:active,
+.competitions-card-btn:focus {
   background: #b8000a;
+  text-decoration: none !important;
+  color: #fff;
 }
+
+.main-btn, .moscow-register-btn {
+  display: inline-block;
+  padding: 13px 34px;
+  background: var(--primary-red);
+  color: #fff;
+  border-radius: 13px;
+  font-size: 1.13em;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  margin-top: 10px;
+  margin-bottom: 6px;
+  transition: background 0.18s, color 0.18s, box-shadow 0.18s;
+  box-shadow: 0 2px 12px rgba(227,6,19,0.08);
+  border: none;
+  cursor: pointer;
+  text-decoration: none !important;
+}
+.main-btn:hover, .main-btn:active, .main-btn:focus, .moscow-register-btn:hover, .moscow-register-btn:active, .moscow-register-btn:focus {
+  background: #b8000a;
+  text-decoration: none !important;
+  color: #fff;
+}
+
 /* Стрелки и индикаторы — современный стиль */
 .competitions-carousel-arrows {
   display: flex;

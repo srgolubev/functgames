@@ -456,7 +456,7 @@ function renderSectionImportant(content) {
         <div>${s.locationAccess?.address||''}</div>
         <div>${s.locationAccess?.directions||''}</div>
         <div style="margin:18px 0 0 0; width:100%; max-width:100%; height:340px; border-radius:14px; overflow:hidden; box-shadow:0 2px 12px rgba(0,0,0,0.08);">
-          <iframe src="https://yandex.ru/map-widget/v1/?ll=37.561445%2C55.715421&z=16&pt=37.561445,55.715421,pm2rdm" width="100%" height="340" frameborder="0" allowfullscreen title="Яндекс.Карта: Южное Спортивное Ядро"></iframe>
+          <iframe src="https://yandex.ru/map-widget/v1/?ll=37.561445%2C55.715421&z=16&pt=37.551647,55.719511,pm2rdm" width="100%" height="340" frameborder="0" allowfullscreen title="Яндекс.Карта: Северное Спортивное Ядро"></iframe>
         </div>
       </div>
     </section>
