@@ -157,12 +157,25 @@
     "partners": [
       {"name": "Департамент спорта города Москвы", "logo": "assets/images/logo/moscow_sport_logo.png", "link": "https://sport.mos.ru/"},
       {"name": "Crocus Fitness", "logo": "assets/images/logo/Сrocus_Fitness_logo.png", "link": "https://crocusfitness.com/"},
-      {"name": "Foreman Products", "logo": "assets/images/logo/foreman_logo.png", "link": "https://www.foremanfitness.ru/"},
-      {"name": "ФББМ", "logo": "assets/images/logo/fbbm_logo.webp", "link": "https://fbbm.ru/"}
+      {"name": "Foreman Products", "logo": "assets/images/logo/Non_descriptor_red.png", "link": "#", "alt": "АНО “Наследие”"},
+      {"name": "ФББМ", "logo": "assets/images/logo/fbbm_logo.webp", "link": "https://fbbm.ru/"},
+      {"name": "Mother Plant", "logo": "assets/images/logo/motherplant.png", "link": "https://motherplant.ru/", "alt": "Биологически активные добавки"},
+      {"name": "Bombbar", "logo": "assets/images/logo/bombar.png", "link": "https://bombbar.ru/", "alt": "Спортивное питание"},
+      {"name": "2scoop", "logo": "assets/images/logo/2scoop.png", "link": "https://2scoop.ru/", "alt": "Спортивное питание"},
+      {"name": "Discover Fitness", "logo": "assets/images/logo/DiscoverFitness.png", "link": "https://discoverfitness.pro/", "alt": "Дистрибьютор мировых брендов фитнес-оборудования"},
+      {"name": "KAVARA", "logo": "assets/images/logo/kavara.png", "link": "https://kavarabrand.com/", "alt": "Функциональная спортивная одежда"},
+      {"name": "SIXPAD", "logo": "assets/images/logo/sixpad.png", "link": "https://sixpad.com.ru/", "alt": "EMS-тренажёров и товаров для спорта"},
+      {"name": "Sneaker Box", "logo": "assets/images/logo/sneakerbox.png", "link": "https://sneakerbox.ru/", "alt": "Премиальная спортивная одежда"},
+      {"name": "ROCS", "logo": "assets/images/logo/rocs.png", "link": "https://rocs.ru/", "alt": "Средства гигиены полости рта"},
+      {"name": "Grow Food", "logo": "assets/images/logo/growfood.png", "link": "https://growfood.pro/", "alt": "Доставка правильного питания"},
+      {"name": "5lb", "logo": "assets/images/logo/5lb.png", "link": "https://5lb.ru/", "alt": "Спортивное питание"},
+      {"name": "Bionova", "logo": "assets/images/logo/bionova.png", "link": "https://bionovashop.ru/", "alt": "Магазин здорового питания"},
+      {"name": "BootyBar", "logo": "assets/images/logo/bootybar.png", "link": "https://bootybar.ru/", "alt": "Протеиновые батончики"},
+      {"name": "AeroFit", "logo": "assets/images/logo/AeroFit.png", "link": "https://aerofit.ru/", "alt": "Тренажёры и фитнес-оборудование"}
     ]
   },
   "footer": {
-    "copyright": "© 2025 Спортивный Фестиваль. Все права защищены.",
+    "copyright": "© 2025 Игры Москвы. АНО “Наследие”. Все права защищены.",
     "socialMedia": []
   },
   "titansSection": {
