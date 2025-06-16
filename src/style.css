@@ -30,7 +30,7 @@
   --container-max-width: 1200px;
 
   /* Фирменная палитра */
-  --color-bg: #B7E8F7;
+  --color-bg: #24c3d7;
   --color-block: #FFFFFF;
   --color-accent: #E30613;
   --color-accent2: #FFB347;
@@ -70,19 +70,17 @@ html {
 body {
   background: var(--color-bg);
   color: var(--color-text);
-
   font-family: var(--font-sans);
   font-size: 1rem;
   line-height: var(--line-height-base);
-  background: linear-gradient(135deg, var(--color-bg) 60%, var(--color-white) 100%);
-  color: var(--color-text);
   min-height: 100vh;
 }
 
 .container {
   max-width: var(--container-max-width);
   margin: 0 auto;
-  padding: 0 var(--space-md);
+  padding-left: var(--space-lg);
+  padding-right: var(--space-lg);
 }
 
 .section {
@@ -97,14 +95,14 @@ body {
 .section:hover {
   box-shadow: 0 8px 40px rgba(0,0,0,0.13);
 }
-@font-face {
-  font-family: 'Unbounded';
-  src: url('../assets/fonts/Unbounded/Unbounded-VariableFont_wght.woff2') format('woff2'),
-       url('../assets/fonts/Unbounded/Unbounded-VariableFont_wght.woff') format('woff'),
-       url('../assets/fonts/Unbounded/Unbounded-VariableFont_wght.ttf') format('truetype');
-  font-weight: 100 900;
-  font-style: normal;
-  font-display: swap;
+
+.main-btn:hover {
+  background: #fff;
+  color: #E30613 !important;
+  border: 2px solid #E30613;
+  font-weight: bold;
+  box-shadow: 0 4px 18px 0 rgba(255, 69, 58, 0.13);
+  transition: all 0.18s cubic-bezier(.4,0,.2,1);
 }
 h1,h2,h3,h4 {
   font-family: 'Unbounded', 'Montserrat', sans-serif;
@@ -175,7 +173,6 @@ h3{font-size:1.7em;margin-bottom:0.32em;font-weight:900;color:var(--color-accent
 
 /* ABOUT SECTION CUSTOM STYLES */
 .about-title {
-  color: var(--color-title);
   font-size: 2.2rem;
   font-family: 'Unbounded', sans-serif;
   font-weight: 900;
@@ -773,7 +770,544 @@ h6 { font-size: var(--font-size-h6); }
   --transition: 0.3s cubic-bezier(.4,0,.2,1);
 }
 
+/* ===== FAMILY SPORT (МАМА, ПАПА, Я) ===== */
+
+/* ===== TITANS SECTION ===== */
+
+.titans-info-card {
+  background: #f2f6fb;
+  border-radius: 22px;
+  box-shadow: 0 4px 24px rgba(43,211,225,0.11), 0 1.5px 8px rgba(0,0,0,0.04);
+  padding: 32px 36px 24px 36px;
+  margin: 32px auto 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  max-width: 480px;
+  border: 1.5px solid #e3eaf3;
+}
+
+.titans-info-row {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(43,211,225,0.06);
+  padding: 18px 18px 14px 18px;
+}
+.titans-info-row > div:nth-child(2) {
+  flex: 1;
+  min-width: 0;
+}
+
+.titans-info-icon {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: #ffe066;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.4em;
+  margin: 0;
+}
+.titans-info-icon.participants::before { content: "👦"; }
+.titans-info-icon.team::before { content: "🤝"; }
+.titans-info-icon.mechanics::before { content: "🏆"; }
+.titans-info-icon.guests::before { content: "⭐"; }
+
+.titans-info-title.titans-red {
+  color: var(--primary-red);
+  font-size: 1.18em;
+  font-weight: 400;
+  margin: 0 0 8px 0;
+  letter-spacing: 0.01em;
+  text-align: center;
+  width: 100%;
+  display: block;
+}
+
+.titans-info-value {
+  font-size: 1.11em;
+  margin-bottom: 0;
+  font-weight: 600;
+  color: #232323;
+}
+
+.titans-info-note {
+  color: #8b98a7;
+  font-size: 0.96em;
+  font-weight: 400;
+  margin-top: 2px;
+}
+
+.titans-special-guests {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #fffbe6 !important;
+  color: #e30613;
+  font-weight: 400 !important;
+  font-size: 1.08em;
+  border-radius: 13px;
+  padding: 14px 16px 12px 16px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(227,6,19,0.07);
+  border: 1.5px solid #ffe066;
+  letter-spacing: 0.01em;
+  margin-top: 18px;
+}
+.titans-special-guests * {
+  font-weight: 400 !important;
+}
+
+
+/* Удаляем старые круговые стили для titans-info-block */
+.titans-info-block { display: none !important; }
+
+
+.titans-info-block {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-bottom: 6px;
+  border-left: 4px solid var(--primary-red);
+  padding-left: 18px;
+}
+
+
+
+.titans-info-value {
+  font-size: 1.11em;
+  margin-bottom: 0;
+  font-weight: 600;
+  color: #232323;
+}
+
+.titans-info-note {
+  color: #8b98a7;
+  font-size: 0.96em;
+  font-weight: 400;
+  margin-top: 2px;
+}
+
+.titans-special-guests {
+  background: linear-gradient(90deg, #ffe066 0%, #ffeedd 100%);
+  color: #e30613;
+  font-weight: 900;
+  font-size: 1.08em;
+  border-radius: 13px;
+  padding: 14px 16px 12px 16px;
+  margin-top: 16px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(227,6,19,0.07);
+  letter-spacing: 0.01em;
+}
+
+@media (max-width: 600px) {
+  .titans-info-card {
+    padding: 12px 3vw 10px 3vw;
+    border-radius: 11px;
+    gap: 16px;
+    min-width: unset;
+  }
+  .titans-info-block {
+    padding-left: 10px;
+    border-left-width: 3px;
+  }
+  .titans-special-guests {
+    font-size: 0.98em;
+    padding: 8px 6px 8px 6px;
+  }
+}
+
+.titans-info-title.titans-red {
+  color: var(--primary-red);
+  font-size: 1.08em;
+  font-weight: 700;
+  margin-bottom: 2px;
+  margin-top: 10px;
+}
+.titans-info-value {
+  font-size: 1.08em;
+  margin-bottom: 2px;
+  font-weight: 400 !important;
+}
+.titans-info-value * {
+  font-weight: 400 !important;
+}
+.titans-special-guests.titans-red {
+  color: var(--primary-red);
+  font-weight: 800;
+  font-size: 1.05em;
+  margin-top: 10px;
+  margin-bottom: 2px;
+}
+@media (max-width: 900px) {
+  .titans-info-card {
+    padding: 16px 10px 12px 10px;
+    max-width: 100%;
+  }
+}
+@media (max-width: 600px) {
+  .titans-info-card {
+    padding: 10px 4vw 8px 4vw;
+    border-radius: 10px;
+  }
+  .titans-info-title.titans-red, .titans-special-guests.titans-red {
+    font-size: 1em;
+  }
+  .titans-info-value {
+    font-size: 0.97em;
+    font-weight: 400 !important;
+  }
+  .titans-info-value * {
+    font-weight: 400 !important;
+  }
+}
+.titans-section {
+  background: #fff;
+  border-radius: 24px;
+  margin: 40px 0;
+  padding: 36px 0 30px 0;
+  box-shadow: 0 2px 16px rgba(43,211,225,0.07);
+}
+.titans-container {
+  display: flex;
+  gap: var(--space-lg);
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.titans-main {
+  flex: 1 1 340px;
+  min-width: 270px;
+  max-width: 520px;
+}
+.titans-logo {
+  width: 90px;
+  margin-bottom: 10px;
+}
+.titans-title {
+  font-family: 'Unbounded', sans-serif;
+  font-size: 2.3rem;
+  font-weight: 800;
+  color: var(--color-title);
+  margin-bottom: 1.1rem;
+  text-align: left;
+}
+.titans-desc {
+  font-size: 1.13em;
+  color: var(--color-text);
+  margin-bottom: 22px;
+}
+.titans-info-row {
+  display: flex;
+  gap: 18px;
+  margin-bottom: 22px;
+  flex-wrap: wrap;
+}
+.titans-info-block {
+  background: none !important;
+  border-radius: 0 !important;
+  width: auto !important;
+  height: auto !important;
+  box-shadow: none !important;
+  color: inherit !important;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+  font-size: inherit !important;
+  text-align: left !important;
+  font-weight: inherit !important;
+  margin: 0 !important;
+  padding-bottom: 6px;
+  border-left: 4px solid var(--primary-red);
+  padding-left: 18px;
+  gap: 6px;
+}
+.titans-info-title {
+  color: var(--primary-red);
+  font-size: 1.02em;
+  margin-bottom: 6px;
+}
+.titans-info-note {
+  color: #888;
+  font-size: 0.93em;
+  font-weight: 400;
+}
+.titans-special-guests {
+  margin-top: 18px;
+  color: var(--primary-red);
+  font-weight: 700;
+  font-size: 1.07em;
+}
+.titans-photos {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  min-width: 220px;
+  max-width: 320px;
+}
+.titans-photo {
+  width: 100%;
+  border-radius: 18px;
+  box-shadow: 0 2px 12px rgba(43,211,225,0.13);
+  object-fit: cover;
+}
+@media (max-width: 900px) {
+  .titans-container {
+    flex-direction: column;
+    gap: 18px;
+  }
+  .titans-main, .titans-photos {
+    max-width: 100%;
+  }
+  .titans-info-row {
+    justify-content: flex-start;
+    gap: 12px;
+  }
+  .titans-info-block {
+    width: 120px;
+    height: 120px;
+    font-size: 0.98em;
+  }
+}
+@media (max-width: 600px) {
+  .titans-section {
+    padding: 18px 0 8px 0;
+    border-radius: 14px;
+    margin: 18px 0;
+  }
+  .titans-title {
+    font-size: 1.25rem;
+  }
+  .titans-info-block {
+    width: 90px;
+    height: 90px;
+    font-size: 0.91em;
+  }
+  .titans-logo {
+    width: 58px;
+  }
+}
+
+.family-info-row {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.family-info-main {
+  flex: 1 1 320px;
+  min-width: 270px;
+  max-width: 440px;
+  color: #fff;
+}
+.family-date-place {
+  font-size: 1.1em;
+  color: var(--primary-red);
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.family-date {
+  font-size: 1.1em;
+  font-weight: 700;
+  color: var(--primary-red);
+}
+.family-place {
+  font-size: 1em;
+  color: var(--color-text);
+  opacity: 0.85;
+}
+.family-desc {
+  margin: 12px 0 18px 0;
+  font-size: 1.13em;
+  color: #fff;
+}
+.family-categories {
+  margin-bottom: 18px;
+  color: #fff;
+}
+.family-categories ul {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 0 0;
+}
+.family-categories li {
+  margin-bottom: 7px;
+  padding-left: 28px;
+  position: relative;
+  font-size: 1.07em;
+  font-weight: 500;
+  color: #fff;
+}
+.cat-yellow::before {
+  content: '';
+  display: inline-block;
+  width: 16px; height: 16px;
+  background: #ffe066;
+  border-radius: 50%;
+  position: absolute; left: 0; top: 2px;
+}
+.cat-orange::before {
+  content: '';
+  display: inline-block;
+  width: 16px; height: 16px;
+  background: #ffb347;
+  border-radius: 50%;
+  position: absolute; left: 0; top: 2px;
+}
+.cat-red::before {
+  content: '';
+  display: inline-block;
+  width: 16px; height: 16px;
+  background: #b9585f;
+  border-radius: 50%;
+  position: absolute; left: 0; top: 2px;
+}
+.cat-blue::before {
+  content: '';
+  display: inline-block;
+  width: 16px; height: 16px;
+  background: #5ad1e6;
+  border-radius: 50%;
+  position: absolute; left: 0; top: 2px;
+}
+.family-prizes {
+  font-size: 1.13em;
+  color: #232323;
+  background: #ffe066;
+  border-radius: 12px;
+  padding: 10px 18px;
+  margin: 16px 0 18px 0;
+  font-weight: 700;
+  text-align: center;
+  box-shadow: 0 2px 12px rgba(227,6,19,0.07);
+}
+.family-register-btn {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 1.13em;
+  font-weight: 800;
+  background: var(--primary-red);
+  color: #fff;
+  border-radius: 18px;
+  padding: 12px 32px;
+  box-shadow: 0 2px 12px rgba(227,6,19,0.13);
+  transition: background 0.18s;
+  text-decoration: none;
+  letter-spacing: 1.2px;
+}
+.family-info-main {
+  /* ...остальные стили... */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.family-info-main .family-register-btn {
+  align-self: center;
+}
+.family-register-btn-wrapper {
+  text-align: center;
+  margin-top: 18px;
+}
+
+.family-register-btn:hover {
+  background: #e24250;
+}
+.titans-photos {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+}
+.titans-logo-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 18px;
+  gap: 10px;
+}
+.titans-logo-block .titans-logo {
+  width: 172px;
+  height: auto;
+  margin-bottom: 0;
+}
+.titans-regulation-link {
+  color: var(--color-accent);
+  font-weight: 500;
+  font-size: 1.04em;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.titans-regulation-link:hover {
+  color: #b8000a;
+  text-decoration: underline;
+}
+.family-info-photos {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  justify-content: flex-start;
+  flex: 1 1 240px;
+  min-width: 180px;
+  color: #fff;
+}
+.family-photo {
+  max-width: 320px;
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px rgba(43,211,225,0.13);
+  margin-bottom: 0;
+}
+@media (max-width: 900px) {
+  .family-info-row {
+    flex-direction: column;
+    gap: 24px;
+  }
+  .family-info-main, .family-info-photos {
+    max-width: 100%;
+    min-width: 0;
+  }
+  .family-photo {
+    max-width: 100%;
+  }
+}
+
 /* ===== HEADER ===== */
+
+.section-bg-dark.family h2 {
+  color: #fff !important;
+  font-size: 2.2rem;
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 800;
+  margin-bottom: 1.2rem;
+  text-align: center;
+  position: relative;
+}
+.section-bg-dark.family h2 {
+  color: #fff !important;
+  font-size: 2.2rem;
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 800;
+  margin-bottom: 1.2rem;
+  text-align: center;
+  position: relative;
+  border-bottom: 5px solid var(--primary-red);
+  width: max-content;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 0.25em;
+}
+.section-bg-dark.family h2::after {
+  display: none;
+}
+
 .main-header {
   position: sticky;
   top: 0;

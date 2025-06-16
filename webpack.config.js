@@ -37,7 +37,8 @@ module.exports = {
       patterns: [
         { from: 'content.json', to: '' },
         { from: 'assets', to: 'assets' },
-        { from: 'assets/fonts', to: 'assets/fonts' }
+        { from: 'assets/fonts', to: 'assets/fonts' },
+        { from: 'src/competitions.json', to: 'competitions.json' }
       ]
     })
   ],

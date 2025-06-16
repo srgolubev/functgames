@@ -1,4 +1,6 @@
 require('./style.css');
+require('./competitionsCarousel.css');
+require('./competitionsCarousel.js');
 
 document.addEventListener('DOMContentLoaded', async () => {
   const app = document.getElementById('app');
@@ -19,13 +21,15 @@ document.addEventListener('DOMContentLoaded', async () => {
     ${renderBanner(content)}
     ${renderSectionAbout(content)}
     ${renderSectionFunctional(content)}
-    ${renderSectionSpectators(content)}
-    ${renderSectionRegistration(content)}
+    ${renderSectionFamilySport(content)}
+    ${renderSectionTitans(content)}
+    ${renderSectionCompetitions(content)}
     ${renderSectionProgram(content)}
     ${renderSectionImportant(content)}
     ${renderSectionPartners(content)}
     ${renderFooter(content)}
   `;
+  loadCompetitions();
 
   // Плавный скролл
   document.querySelectorAll('nav a[href^="#"]').forEach(link => {
@@ -72,6 +76,8 @@ function renderHeader(content) {
       <div class="header-logos-burger">
         <div class="header-logos">
           ${logos.moscowSport ? `<img src="${logos.moscowSport}" alt="Московский спорт">` : ''}
+          ${logos.non_descriptor_red ? `<img src="${logos.non_descriptor_red}" alt="Non Descriptor">` : ''}
+          ${logos.mosgames_dark ? `<img src="${logos.mosgames_dark}" alt="Игры Москвы">` : ''}
           ${logos.nasledie ? `<img src="${logos.nasledie}" alt="Наследие">` : ''}
           ${logos.depsport ? `<img src="${logos.depsport}" alt="Департамент спорта Москвы">` : ''}
         </div>
@@ -155,6 +161,101 @@ function renderSectionAbout(content) {
   // `;
 //}
 
+
+
+// FAMILY SPORT
+function renderSectionFamilySport(content) {
+  const s = content.familySportSection || {};
+  return `
+    <section id="familySport" class="section section-bg-dark family">
+      <h2>${s.title || ''}</h2>
+      <div class="family-info-row">
+        <div class="family-info-main">
+
+          <div class="family-desc">${s.description || ''}</div>
+          <div class="family-categories">
+            <b>Категории:</b>
+            <ul>
+              ${(s.categories || []).map(cat => `<li class="cat-${cat.icon}">${cat.text}</li>`).join('')}
+            </ul>
+          </div>
+          <div class="family-prizes">${s.prizesText || ''}</div>
+        </div>
+        <div class="family-info-photos">
+          ${(s.images || []).map(img => `<img src="${img}" alt="Семейный фестиваль" class="family-photo">`).join('')}
+        </div>
+      </div>
+      <div class="family-register-btn-wrapper">
+        <a href="https://forms.yandex.ru/u/684813a7f47e73173ce7cb60/" class="main-btn family-register-btn" target="_blank">${s.registrationButtonText || 'Зарегистрироваться'}</a>
+      </div>
+    </section>
+  `;
+}
+
+// COMPETITIONS SECTION
+function renderSectionCompetitions(content) {
+  return `
+    <section id="competitions" class="section competitions-section">
+      <h2 class="competitions-title">СОРЕВНОВАНИЯ</h2>
+      <div id="competitions-carousel-arrows" class="competitions-carousel-arrows"></div>
+      <div id="competitions-carousel" class="competitions-carousel">
+        <div id="competitions-carousel-track" class="competitions-carousel-track"></div>
+      </div>
+      <div id="competitions-carousel-dots" class="competitions-carousel-dots"></div>
+    </section>
+  `;
+}
+
+// TITANS SECTION
+function renderSectionTitans(content) {
+  const s = content.titansSection || {};
+  return `
+    <section id="titans" class="section titans-section">
+      <div class="container titans-container">
+        <div class="titans-main">
+          <h2 class="titans-title">${s.title || 'ЮНЫЕ ТИТАНЫ'}</h2>
+          <div class="titans-desc">${s.description || ''}</div>
+          <div class="titans-info-card">
+  <div class="titans-info-row">
+    <div class="titans-info-icon participants"></div>
+    <div>
+      <div class="titans-info-title titans-red">УЧАСТНИКИ</div>
+      <div class="titans-info-value">14-15 лет,<br>16-18 лет,<br>19-23 года</div>
+    </div>
+  </div>
+  <div class="titans-info-row">
+    <div class="titans-info-icon team"></div>
+    <div>
+      <div class="titans-info-title titans-red">КОМАНДА</div>
+      <div class="titans-info-value">5 человек<br><span class="titans-info-note">(1 человек противоположного пола)</span></div>
+    </div>
+  </div>
+  <div class="titans-info-row">
+    <div class="titans-info-icon mechanics"></div>
+    <div>
+      <div class="titans-info-title titans-red">МЕХАНИКА СОРЕВНОВАНИЙ</div>
+      <div class="titans-info-value">Отборочный тур<br>Полуфинал<br>Финал<br><span class="titans-info-note">(4 команды)</span></div>
+    </div>
+  </div>
+  <div class="titans-special-guests">
+    <span class="titans-info-icon guests"></span>
+    <span><b>Специальные гости — участники и победители 1, 2 сезона ТИТАНЫ</b></span>
+  </div>
+</div>
+        </div>
+        <div class="titans-photos">
+          <img src="assets/images/FSS3111.jpg" alt="Юные титаны фото 1" class="titans-photo">
+          <img src="assets/images/FSS3114.jpg" alt="Юные титаны фото 2" class="titans-photo">
+          <div class="titans-logo-block">
+            <img src="assets/images/logo/titans.png" alt="Юные титаны" class="titans-logo">
+            <a href="assets/Положение_Юные_Титаны_для_детей_и_подростков_10_06_2025_2.pdf" class="titans-regulation-link" target="_blank">Положение о соревновании</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  `;
+}
+
 // FUNCTIONAL GAMES
 function renderSectionFunctional(content) {
   const s = content.functionalGamesSection || {};
@@ -185,6 +286,9 @@ function renderSectionFunctional(content) {
         <div>${s.obstacleCourse?.equipmentSponsor||''}</div>
       </div>
       ${s.regulationsLink ? `<a href="${s.regulationsLink}" target="_blank" class="regulations-link">Положение</a>` : ''}
+      <div class="moscow-register-btn-wrapper" style="text-align:center; margin: 18px 0 22px 0;">
+        <a href="https://forms.yandex.ru/u/6847e80050569007ccb955a0/" class="main-btn moscow-register-btn" target="_blank">Зарегистрироваться</a>
+      </div>
       <div class="gallery">
         ${(s.imageGallery||[]).map(img=>`<img src="${img}" alt="Игры" class="gallery-thumb" data-fullsrc="${img}">`).join('')}
       </div>
