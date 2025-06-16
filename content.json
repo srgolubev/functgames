@@ -24,7 +24,6 @@
     "type": "video",
     "source_webm": "assets/video/combined_video.webm",
     "source_mp4": "assets/video/combined_video.mp4",
-    "posterImage": "assets/images/banner_poster_image.jpg",
     "title": "ИГРЫ МОСКВЫ",
     "dateText": "5 ИЮЛЯ 2025",
     "locationText": "ОК «Лужники»,\nЮжное Спортивное Ядро, Москва",
@@ -77,8 +76,8 @@
       ]
     },
     "imageGallery": [
-      "assets/images/family_event_image1.jpeg",
-      "assets/images/family_event_image2.jpeg"
+      "assets/images/mosgame1.jpg",
+      "assets/images/mosgame2.jpg"
     ]
   },
   "familySportSection": {
@@ -193,7 +192,8 @@
   },
   "imageSources": {
     "generalFestival": [
-        "assets/images/banner_poster_image.jpg"
+        "assets/images/mosgame1.jpg",
+        "assets/images/mosgame2.jpg"
     ],
     "certificates": ["assets/images/WCG.jpg"],
     "stageVisual": ["assets/images/WCG_2.jpg"]
