@@ -25,6 +25,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     ${renderSectionTitans(content)}
     ${renderSectionCompetitions(content)}
     ${renderSectionProgram(content)}
+    ${renderSectionActivities(content)}
+    ${renderSectionHeadliners(content)}
     ${renderSectionImportant(content)}
     ${renderSectionPartners(content)}
     ${renderFooter(content)}
@@ -202,6 +204,89 @@ function renderSectionCompetitions(content) {
         <div id="competitions-carousel-track" class="competitions-carousel-track"></div>
       </div>
       <div id="competitions-carousel-dots" class="competitions-carousel-dots"></div>
+    </section>
+  `;
+}
+
+// ACTIVITIES SECTION
+function renderSectionActivities(content) {
+  // Жёстко заданные активности и изображения
+  const activities = [
+    { img: 'assets/images/punch@2x.png', label: 'Сила удара' },
+    { img: 'assets/images/jump@2x.png', label: 'Прыжок в высоту' },
+    { img: 'assets/images/greblya@2x.png', label: 'Гребля' },
+    { img: 'assets/images/airbike@2x.png', label: 'Айр-байк' },
+    { img: 'assets/images/basket@2x.png', label: 'Регби или баскетбол' },
+  ];
+  return `
+    <section id="activities" class="section activities-section">
+      <h2 class="activities-title">АКТИВНОСТИ:</h2>
+      <div class="activities-list">
+        ${activities.map(a => `
+          <div class="activity-item">
+            <img src="${a.img}" alt="${a.label}" class="activity-img" />
+            <div class="activity-label">${a.label}</div>
+          </div>
+        `).join('')}
+      </div>
+    </section>
+  `;
+}
+
+// HEADLINERS SECTION
+function renderSectionHeadliners(content) {
+  // Жёстко заданные хедлайнеры
+  const headliners = [
+    {
+      img: 'assets/images/Bobylev.png',
+      name: 'Николай Бобылев',
+      desc: 'Победитель шоу «Титаны», учитель физкультуры и спортсмен, выступающий в армрестлинге, пауэрлифтинге и других силовых видах спорта.'
+    },
+    {
+      img: 'assets/images/Stoun.png',
+      name: 'Александр «Стоун» Зарубин',
+      desc: 'Чемпион России по боевым искусствам, Чемпион Кубка мира, боец ММА, участник шоу «Титаны».'
+    },
+    {
+      img: 'assets/images/Vlasov.png',
+      name: 'Роман Власов',
+      desc: 'Российский спортсмен, борец греко-римского стиля, двукратный олимпийский чемпион, участник шоу «Титаны».'
+    },
+    {
+      img: 'assets/images/Krukov.png',
+      name: 'Никита Крюков',
+      desc: 'Олимпийский чемпион, трёхкратный чемпион мира в спринте, заслуженный мастер спорта России, участник шоу «Титаны».'
+    },
+    {
+      img: 'assets/images/Kovalchuk.png',
+      name: 'Илья Ковальчук',
+      desc: 'Нападающий национальной сборной России, заслуженный мастер спорта, олимпийский чемпион, двукратный чемпион мира, пятикратный призёр чемпионатов мира.'
+    },
+    {
+      img: 'assets/images/Nagornaya.png',
+      name: 'Дарья Нагорная',
+      desc: 'Российская гимнастка, серебряный призёр Олимпийских игр, чемпионка мира, участница шоу «Титаны».'
+    },
+    {
+      img: 'assets/images/Pluzhnikova.png',
+      name: 'Дарья Плужникова',
+      desc: 'Российская культуристка, бодибилдер, блогер, мировая рекордсменка, участница шоу «Титаны».'
+    }
+  ];
+  return `
+    <section id="headliners" class="section headliners-section">
+      <div class="container">
+        <h2 class="headliners-title">ХЕДЛАЙНЕРЫ</h2>
+        <div class="headliners-list">
+          ${headliners.map(h => `
+            <div class="headliner-item">
+              <img src="${h.img}" alt="${h.name}" class="headliner-img" />
+              <div class="headliner-name">${h.name}</div>
+              <div class="headliner-desc">${h.desc}</div>
+            </div>
+          `).join('')}
+        </div>
+      </div>
     </section>
   `;
 }
