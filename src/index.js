@@ -189,6 +189,9 @@ function renderSectionFamilySport(content) {
       </div>
       <div class="family-register-btn-wrapper">
         <a href="https://forms.yandex.ru/u/684813a7f47e73173ce7cb60/" class="main-btn family-register-btn" target="_blank">${s.registrationButtonText || 'Зарегистрироваться'}</a>
+        <div class="family-regulation-link">
+          <a href="assets/Polozhenie_mama,papa,ya_05_07_2025.pdf" target="_blank" class="family-regulation-pdf">Положение о проведении</a>
+        </div>
       </div>
     </section>
   `;

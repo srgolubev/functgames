@@ -4,14 +4,14 @@
     "description": "Официальная дисциплина Международной федерации бодибилдинга и фитнеса. Функциональный фитнес , Fitness Challenge, включает в себя выполнение 6-ти упражнений с перерывом между ними по 2 минуты.  Результатом является максимальное количество повторений  в сумме 6-ти упражнений",
     "image": "assets/images/FitnessChallenge.jpg",
     "regulation": null,
-    "registerUrl": null
+    "registerUrl": "https://forms.yandex.ru/u/6848116284227c160e51a67d/"
   },
   {
     "title": "Жим лёжа",
     "description": "Состязания проходят под руководством федерации русского жима. Правила выполнения упражнений , вес отягощений и категории указаны в положении о соревнованиях",
     "image": "assets/images/push.jpg",
     "regulation": "assets/Polozhenie_Moscow_05_07_2025.pdf",
-    "registerUrl": "#"
+    "registerUrl": "https://docs.google.com/document/d/1BZx9jYXcEinFRBsbGZdCHhUF1Fq8CROWgthMS06e1fg/edit?usp=sharing"
   },
   {
     "title": "Арм рестлинг",

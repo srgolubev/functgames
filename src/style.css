@@ -9,6 +9,18 @@
 }
 
 /* ===== CSS RESET ===== */
+
+.family-regulation-pdf {
+  color: #ffe066;
+  font-weight: 700;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+.family-regulation-pdf:hover, .family-regulation-pdf:focus {
+  color: #fffbe6;
+  text-decoration: underline;
+}
+
 * {margin:0;padding:0;box-sizing:border-box;}
 
 /* ===== Design System Variables ===== */
