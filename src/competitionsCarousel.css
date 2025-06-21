@@ -201,17 +201,22 @@
   background: none !important;
 }
 .competitions-carousel {
-  overflow-x: hidden;
+  display: flex;
+  overflow-x: auto;
   overflow-y: visible;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  gap: 26px;
   position: relative;
   padding-bottom: 18px;
 }
 .competitions-carousel-track {
   display: flex;
   gap: 26px;
-  transition: transform 0.55s cubic-bezier(0.6,0.1,0.3,1);
-  will-change: transform;
+  /* transition и transform больше не нужны */
+  will-change: auto;
   overflow: visible;
+  width: auto !important;
 }
 .competitions-card {
   min-width: 340px;
@@ -239,5 +244,10 @@
   }
   .competitions-section {
     padding: 0 0 32px 0;
+  }
+  .competitions-card:hover {
+    box-shadow: none !important;
+    transform: none !important;
+    z-index: auto;
   }
 }

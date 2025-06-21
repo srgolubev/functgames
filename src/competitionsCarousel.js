@@ -18,6 +18,8 @@ function renderCompetitionsCarousel() {
 
   // Создаём трек для карточек
   let track = document.createElement('div');
+  // Глобальные ссылки на стрелки для свайпа
+  let left = null, right = null;
   track.className = 'competitions-carousel-track';
   track.style.width = `${competitionsData.length * 370 + (competitionsData.length-1)*26}px`;
 
@@ -56,13 +58,13 @@ function renderCompetitionsCarousel() {
   if (arrows) {
     arrows.innerHTML = '';
     // Левая
-    const left = document.createElement('button');
+    left = document.createElement('button');
     left.className = 'competitions-carousel-arrow';
     left.innerHTML = `<svg viewBox="0 0 32 32"><path d="M20.7 25.3a1 1 0 0 1-1.4 0l-8-8a1 1 0 0 1 0-1.4l8-8a1 1 0 0 1 1.4 1.4L13.42 16l7.3 7.3a1 1 0 0 1 0 1.4z"/></svg>`;
     left.onclick = () => { if (current > 0) { current--; update(); } };
     arrows.appendChild(left);
     // Правая
-    const right = document.createElement('button');
+    right = document.createElement('button');
     right.className = 'competitions-carousel-arrow';
     right.innerHTML = `<svg viewBox="0 0 32 32"><path d="M11.3 6.7a1 1 0 0 1 1.4 0l8 8a1 1 0 0 1 0 1.4l-8 8a1 1 0 1 1-1.4-1.4l7.3-7.3-7.3-7.3a1 1 0 0 1 0-1.4z"/></svg>`;
     right.onclick = () => { if (current < competitionsData.length - visibleCount) { current++; update(); } };
@@ -83,9 +85,74 @@ function renderCompetitionsCarousel() {
     }
   }
 
-  // начальный сдвиг
-  update();
+  // Нативный скролл: убираем кастомные свайпы и transform
+  // Стрелки и точки будут скроллить track через scrollLeft
+  function scrollToCard(idx) {
+    const card = track.children[idx];
+    if (card) {
+      card.scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
+    }
+  }
+
+  if (left) {
+    left.onclick = () => {
+      if (current > 0) {
+        current--;
+        scrollToCard(current);
+        updateDots();
+      }
+    };
+  }
+  if (right) {
+    right.onclick = () => {
+      if (current < competitionsData.length - visibleCount) {
+        current++;
+        scrollToCard(current);
+        updateDots();
+      }
+    };
+  }
+
+  function updateDots() {
+    if (dots) {
+      Array.from(dots.children).forEach((dot, idx) => {
+        dot.classList.toggle('active', idx === current);
+      });
+    }
+  }
+
+  if (dots) {
+    Array.from(dots.children).forEach((dot, idx) => {
+      dot.onclick = () => {
+        current = idx;
+        scrollToCard(current);
+        updateDots();
+      };
+    });
+  }
+
+  // При скролле трека определяем текущий индекс
+  track.addEventListener('scroll', () => {
+    let minDiff = Infinity;
+    let idx = 0;
+    Array.from(track.children).forEach((card, i) => {
+      const rect = card.getBoundingClientRect();
+      const diff = Math.abs(rect.left - track.getBoundingClientRect().left);
+      if (diff < minDiff) {
+        minDiff = diff;
+        idx = i;
+      }
+    });
+    if (current !== idx) {
+      current = idx;
+      updateDots();
+    }
+  });
+
+  // Изначально скроллим к первому
+  scrollToCard(current);
 }
+
 
 window.addEventListener('resize', renderCompetitionsCarousel);
 window.loadCompetitions = loadCompetitions;

@@ -11,14 +11,14 @@
     "description": "Состязания проходят под руководством федерации русского жима. Правила выполнения упражнений , вес отягощений и категории указаны в положении о соревнованиях",
     "image": "assets/images/push.jpg",
     "regulation": "assets/Polozhenie_Moscow_05_07_2025.pdf",
-    "registerUrl": "https://docs.google.com/document/d/1BZx9jYXcEinFRBsbGZdCHhUF1Fq8CROWgthMS06e1fg/edit?usp=sharing"
+    "registerUrl": "https://rusgym78.ru/sorevnovaniya/"
   },
   {
     "title": "Арм рестлинг",
     "description": "Это не просто борьба на руках, это сплав силы, техники, стратегии и выносливости, превращающий, казалось бы, простое соревнование в захватывающее зрелище и требующее от участников невероятной самоотдачи.",
     "image": "assets/images/armwrestling.jpg",
-    "regulation": null,
-    "registerUrl": "https://Arm-rate.ru/"
+    "regulation": "https://docs.google.com/document/d/1BZx9jYXcEinFRBsbGZdCHhUF1Fq8CROWgthMS06e1fg",
+    "registerUrl": "https://arm-rate.ru/tournaments/136"
   },
   {
     "title": "Подъем на бицепс",
