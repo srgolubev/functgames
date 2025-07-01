@@ -150,7 +150,7 @@ function renderCompetitionsCarousel() {
   });
 
   // Изначально скроллим к первому
-  scrollToCard(current);
+  // scrollToCard(current);
 }
 
 

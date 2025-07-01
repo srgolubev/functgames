@@ -330,12 +330,14 @@ function renderSectionTitans(content) {
     <span><b>Специальные гости — участники и победители 1, 2 сезона ТИТАНЫ</b></span>
   </div>
 </div>
+          
         </div>
         <div class="titans-photos">
           <img src="assets/images/FSS3111.jpg" alt="Юные титаны фото 1" class="titans-photo">
           <img src="assets/images/FSS3114.jpg" alt="Юные титаны фото 2" class="titans-photo">
           <div class="titans-logo-block">
             <img src="assets/images/logo/titans.png" alt="Юные титаны" class="titans-logo">
+            <a href="https://forms.yandex.ru/u/6848135995add50015f8bfe4/" class="main-btn titans-register-btn" target="_blank">Зарегистрироваться</a>
             <a href="assets/Положение_Юные_Титаны_для_детей_и_подростков_10_06_2025_2.pdf" class="titans-regulation-link" target="_blank">Положение о соревновании</a>
           </div>
         </div>
@@ -457,9 +459,9 @@ function renderSectionImportant(content) {
       <div class="location">
         <b>${s.locationAccess?.title||''}</b>
         <div>${s.locationAccess?.address||''}</div>
-        <div>${s.locationAccess?.directions||''}</div>
+        <div>${(s.locationAccess?.directions||'').replace(/\n/g, '<br>')}</div>
         <div style="margin:18px 0 0 0; width:100%; max-width:100%; height:340px; border-radius:14px; overflow:hidden; box-shadow:0 2px 12px rgba(0,0,0,0.08);">
-          <iframe src="https://yandex.ru/map-widget/v1/?ll=37.561445%2C55.715421&z=16&pt=37.551647,55.719511,pm2rdm" width="100%" height="340" frameborder="0" allowfullscreen title="Яндекс.Карта: Северное Спортивное Ядро"></iframe>
+          <iframe src="https://yandex.ru/map-widget/v1/?ll=37.551640%2C55.719512&z=16&pt=37.551640,55.719512,pm2rdm" width="100%" height="340" frameborder="0" allowfullscreen title="Яндекс.Карта: Северное Спортивный центр"></iframe>
         </div>
       </div>
     </section>

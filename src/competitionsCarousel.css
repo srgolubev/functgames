@@ -209,6 +209,7 @@
   gap: 26px;
   position: relative;
   padding-bottom: 18px;
+  touch-action: pan-y;
 }
 .competitions-carousel-track {
   display: flex;
