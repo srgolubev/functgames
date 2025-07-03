@@ -11,14 +11,22 @@
 /* ===== CSS RESET ===== */
 
 .family-regulation-pdf {
-  color: #ffe066;
+  color: var(--color-accent);
   font-weight: 700;
   text-decoration: underline;
   transition: color 0.2s;
 }
 .family-regulation-pdf:hover, .family-regulation-pdf:focus {
-  color: #fffbe6;
+  color: var(--color-text);
   text-decoration: underline;
+}
+
+.section-bg-dark .family-regulation-pdf {
+  color: #ffe066;
+}
+.section-bg-dark .family-regulation-pdf:hover, 
+.section-bg-dark .family-regulation-pdf:focus {
+  color: #fffbe6;
 }
 
 * {margin:0;padding:0;box-sizing:border-box;}
@@ -1305,8 +1313,51 @@ h6 { font-size: var(--font-size-h6); }
   margin-top: 18px;
 }
 
+
+
 .family-register-btn:hover {
   background: #e24250;
+}
+
+.competitions-card-btn {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 1.13em;
+  font-weight: 800;
+  background: var(--primary-red);
+  color: #fff;
+  border-radius: 18px;
+  padding: 12px 32px;
+  box-shadow: 0 2px 12px rgba(227,6,19,0.13);
+  transition: background 0.18s;
+  text-decoration: none;
+  letter-spacing: 1.2px;
+}
+
+.competitions-card-btn:hover {
+  background: #e24250;
+}
+
+.competitions-card-btn.disabled {
+  background-color: #ccc;
+  color: #666;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.competitions-card-btn.disabled:hover {
+  background-color: #ccc;
+}
+
+.family-register-btn.disabled {
+  background-color: #ccc;
+  color: #666;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.family-register-btn.disabled:hover {
+  background-color: #ccc;
 }
 .titans-photos {
   display: flex;
@@ -1315,11 +1366,29 @@ h6 { font-size: var(--font-size-h6); }
   align-items: center;
 }
 .titans-logo-block {
+  margin-top: 1.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 18px;
-  gap: 10px;
+}
+
+.titans-registration-block {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.titans-registration-title {
+  color: var(--color-accent);
+  font-weight: 900;
+  margin-bottom: 0.5rem;
+  font-family: 'Unbounded', sans-serif;
+  text-transform: uppercase;
+}
+
+.titans-registration-block .titans-register-btn + .titans-register-btn {
+  margin-top: 0.5rem;
 }
 .titans-logo-block .titans-logo {
   width: 172px;

@@ -34,7 +34,11 @@ function renderCompetitionsCarousel() {
         <div class="competitions-card-desc">${c.description}</div>
         <div class="competitions-card-links">
           ${c.regulation ? `<a href="${c.regulation}" class="competitions-card-link" target="_blank">Положение</a>` : ''}
-          ${c.registerUrl && c.registerUrl !== '#' ? `<a href="${c.registerUrl}" class="competitions-card-btn" target="_blank">Зарегистрироваться</a>` : ''}
+          ${c.registerUrl ? 
+            (c.registrationClosed ? 
+              `<a class="competitions-card-btn disabled">Регистрация завершена</a>` : 
+              `<a href="${c.registerUrl}" class="competitions-card-btn" target="_blank">Зарегистрироваться</a>`
+            ) : ''}
         </div>
       </div>
     `;

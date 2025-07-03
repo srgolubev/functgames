@@ -188,7 +188,7 @@ function renderSectionFamilySport(content) {
         </div>
       </div>
       <div class="family-register-btn-wrapper">
-        <a href="https://forms.yandex.ru/u/684813a7f47e73173ce7cb60/" class="main-btn family-register-btn" target="_blank">${s.registrationButtonText || 'Зарегистрироваться'}</a>
+        <a class="main-btn family-register-btn disabled">Регистрация завершена</a>
         <div class="family-regulation-link">
           <a href="assets/Polozhenie_mama,papa,ya_05_07_2025.pdf" target="_blank" class="family-regulation-pdf">Положение о проведении</a>
         </div>
@@ -337,7 +337,11 @@ function renderSectionTitans(content) {
           <img src="assets/images/FSS3114.jpg" alt="Юные титаны фото 2" class="titans-photo">
           <div class="titans-logo-block">
             <img src="assets/images/logo/titans.png" alt="Юные титаны" class="titans-logo">
-            <a href="https://forms.yandex.ru/u/6848135995add50015f8bfe4/" class="main-btn titans-register-btn" target="_blank">Зарегистрироваться</a>
+            <div class="titans-registration-block">
+              <h4 class="titans-registration-title">Регистрация</h4>
+              <a href="https://forms.yandex.ru/u/6848135995add50015f8bfe4/" class="main-btn titans-register-btn" target="_blank">Командный зачет</a>
+              <a href="https://forms.yandex.ru/u/686410c490fa7b2573cc4629/" class="main-btn titans-register-btn" target="_blank">Личный зачет</a>
+            </div>
             <a href="assets/Положение_Юные_Титаны_для_детей_и_подростков_10_06_2025_2.pdf" class="titans-regulation-link" target="_blank">Положение о соревновании</a>
           </div>
         </div>
@@ -378,6 +382,9 @@ function renderSectionFunctional(content) {
       ${s.regulationsLink ? `<a href="${s.regulationsLink}" target="_blank" class="regulations-link">Положение</a>` : ''}
       <div class="moscow-register-btn-wrapper" style="text-align:center; margin: 18px 0 22px 0;">
         <a href="https://forms.yandex.ru/u/6847e80050569007ccb955a0/" class="main-btn moscow-register-btn" target="_blank">Зарегистрироваться</a>
+        <div class="family-regulation-link" style="margin-top: 10px;">
+          <a href="assets/Moscow_games_polozhenie.pdf" target="_blank" class="family-regulation-pdf">Положение о проведении</a>
+        </div>
       </div>
       <div class="gallery">
         ${(s.imageGallery||[]).map(img=>`<img src="${img}" alt="Игры" class="gallery-thumb" data-fullsrc="${img}">`).join('')}
