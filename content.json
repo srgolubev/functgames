@@ -17,7 +17,7 @@
   "navigation": [
     {"text": "О фестивале", "href": "#about"},
     {"text": "Программа", "href": "#program"},
-    {"text": "Регистрация", "href": "#register"},
+    {"text": "Фото", "href": "#gallery"},
     {"text": "Партнеры", "href": "#partners"}
   ],
   "banner": {
@@ -203,6 +203,33 @@
     "secondaryColor": "white",
     "tertiaryColor": "gray",
     "fontFamily": "'Roboto', sans-serif"
+  },
+  "gallerySection": {
+    "title": "Галерея",
+    "images": [
+      "https://i.ibb.co/35hHRTqT/MPY2056.jpg",
+      "https://i.ibb.co/DHQ2fLg8/MPY1635.jpg",
+      "https://i.ibb.co/LDNbdjp3/MPY1475.jpg",
+      "https://i.ibb.co/Z1vnkyKc/MPY1449.jpg",
+      "https://i.ibb.co/sZZrV46/MPY1371.jpg",
+      "https://i.ibb.co/xKwHPf4n/MPY1365.jpg",
+      "https://i.ibb.co/TBbbxCvD/MPY1340.jpg",
+      "https://i.ibb.co/nq4HC6tB/MPY1332.jpg",
+      "https://i.ibb.co/v4HLqS9g/MPY1318.jpg",
+      "https://i.ibb.co/cfVRnvP/MPY1300.jpg",
+      "https://i.ibb.co/WvfWShDF/MPY1258.jpg",
+      "https://i.ibb.co/v4vbBJnj/MPY1184.jpg",
+      "https://i.ibb.co/VyCBknd/MPY1180.jpg",
+      "https://i.ibb.co/m5gDdnLL/MPY1161.jpg",
+      "https://i.ibb.co/ZzynCyfY/MPY1143.jpg",
+      "https://i.ibb.co/hJ4k08kN/MPY1485.jpg",
+      "https://i.ibb.co/rGBpY1fx/MPY1099.jpg",
+      "https://i.ibb.co/tTsqds92/MPY1044.jpg",
+      "https://i.ibb.co/DP4FCJ75/MPY1037.jpg",
+      "https://i.ibb.co/S4tFRvMc/MPY1011.jpg"
+    ],
+    "morePhotosLink": "https://disk.yandex.ru/d/6oqjQGO257koYA",
+    "morePhotosButtonText": "Больше фото"
   }
 }
 

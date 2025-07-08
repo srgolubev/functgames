@@ -2,6 +2,32 @@ require('./style.css');
 require('./competitionsCarousel.css');
 require('./competitionsCarousel.js');
 
+// Function to render the gallery section
+function renderSectionGallery(content) {
+  const s = content.gallerySection || {};
+  if (!s.images || s.images.length === 0) {
+    return '';
+  }
+
+  const imageElements = s.images.map(imgUrl => `
+    <div class="gallery-item">
+      <img src="${imgUrl}" alt="Фото из галереи" loading="lazy">
+    </div>
+  `).join('');
+
+  return `
+    <section id="gallery" class="section">
+      <h2 class="section-title">${s.title || 'Галерея'}</h2>
+      <div class="gallery-grid">
+        ${imageElements}
+      </div>
+      <div class="gallery-more-btn-wrapper">
+        <a href="${s.morePhotosLink}" class="main-btn" target="_blank">${s.morePhotosButtonText || 'Больше фото'}</a>
+      </div>
+    </section>
+  `;
+}
+
 document.addEventListener('DOMContentLoaded', async () => {
   const app = document.getElementById('app');
   let content = {};
@@ -25,6 +51,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     ${renderSectionTitans(content)}
     ${renderSectionCompetitions(content)}
     ${renderSectionProgram(content)}
+    ${renderSectionGallery(content)} 
     ${renderSectionActivities(content)}
     ${renderSectionHeadliners(content)}
     ${renderSectionImportant(content)}
@@ -32,6 +59,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     ${renderFooter(content)}
   `;
   loadCompetitions();
+  setupMasonryGallery();
 
   // Плавный скролл
   document.querySelectorAll('nav a[href^="#"]').forEach(link => {
@@ -434,6 +462,32 @@ function renderSectionRegistration(content) {
 }
 
 // ...
+function renderSectionGallery(content) {
+  const s = content.gallerySection || {};
+  if (!s.images || s.images.length === 0) {
+    return '';
+  }
+
+  const imageElements = s.images.map(imgUrl => `
+    <div class="gallery-item">
+      <img src="${imgUrl}" alt="Фото из галереи" loading="lazy">
+    </div>
+  `).join('');
+
+  return `
+    <section id="gallery" class="section">
+      <h2 class="section-title">${s.title || 'Галерея'}</h2>
+      <div class="gallery-grid">
+        ${imageElements}
+      </div>
+      <div class="gallery-more-btn-wrapper">
+        <a href="${s.morePhotosLink}" class="main-btn" target="_blank">${s.morePhotosButtonText || 'Больше фото'}</a>
+      </div>
+    </section>
+  `;
+}
+
+// PROGRAM
 function renderSectionProgram(content) {
   const s = content.eventProgram || {};
   return `
@@ -453,6 +507,25 @@ function renderSectionProgram(content) {
 }
 
 // IMPORTANT INFO
+function renderSectionImportant(content) {
+  const s = content.importantInfoSection || {};
+  return `
+    <section id="important" class="section section-bg-dark important-section">
+      <div class="container">
+        <h2 class="section-title">${s.title || 'ВАЖНАЯ ИНФОРМАЦИЯ'}</h2>
+        <div class="important-info-content">
+          ${(s.infoBlocks || []).map(block => `
+            <div class="info-block">
+              <h3 class="info-block-title">${block.title}</h3>
+              <p>${block.text}</p>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+    </section>
+  `;
+}
+
 function renderSectionImportant(content) {
   const s = content.importantInfoSection || {};
   return `
@@ -518,6 +591,69 @@ if (typeof window !== 'undefined') {
         overlay.addEventListener('click', closeLightbox);
       }
     });
+  });
+}
+
+function setupMasonryGallery() {
+  const gallery = document.querySelector('.gallery-grid');
+  if (!gallery) {
+    return;
+  }
+
+  const resizeAllGridItems = () => {
+    const allItems = gallery.querySelectorAll('.gallery-item');
+    const rowHeight = 1;
+    const rowGap = parseInt(window.getComputedStyle(gallery).getPropertyValue('grid-row-gap'));
+
+    allItems.forEach(item => {
+      const img = item.querySelector('img');
+      
+      const setSpan = () => {
+        // Calculate the aspect ratio of the image
+        const ratio = img.naturalHeight / img.naturalWidth;
+        // Get the width of the grid item
+        const itemWidth = item.getBoundingClientRect().width;
+        // Calculate the scaled height of the image
+        const scaledHeight = itemWidth * ratio;
+        // Calculate the number of rows to span
+        const rowSpan = Math.ceil((scaledHeight + rowGap) / (rowHeight + rowGap));
+        // Apply the span to the grid item
+        item.style.gridRowEnd = `span ${rowSpan}`;
+      }
+
+      if (img.complete) {
+        setSpan();
+      } else {
+        img.addEventListener('load', setSpan);
+      }
+    });
+  }
+
+  // Wait for images to load before setting up the grid
+  const images = gallery.querySelectorAll('img');
+  let imagesLoaded = 0;
+  images.forEach(img => {
+    if (img.complete) {
+        imagesLoaded++;
+    } else {
+        img.addEventListener('load', () => {
+            imagesLoaded++;
+            if (imagesLoaded === images.length) {
+                resizeAllGridItems();
+            }
+        });
+    }
+  });
+
+  if (imagesLoaded === images.length) {
+    resizeAllGridItems();
+  }
+
+  // Recalculate on window resize
+  let resizeTimeout;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(resizeAllGridItems, 200);
   });
 }
 
