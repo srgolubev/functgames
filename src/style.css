@@ -1359,6 +1359,24 @@ h6 { font-size: var(--font-size-h6); }
 .family-register-btn.disabled:hover {
   background-color: #ccc;
 }
+
+.main-btn.disabled, .main-btn:disabled,
+.titans-register-btn.disabled,
+.moscow-register-btn.disabled {
+  background-color: #ccc !important; /* Use !important to ensure override */
+  color: #666 !important;
+  cursor: not-allowed;
+  pointer-events: none;
+  border: none;
+}
+
+.main-btn.disabled:hover, .main-btn:disabled:hover,
+.titans-register-btn.disabled:hover,
+.moscow-register-btn.disabled:hover {
+  background-color: #ccc !important;
+  color: #666 !important;
+}
+
 .titans-photos {
   display: flex;
   flex-direction: column;

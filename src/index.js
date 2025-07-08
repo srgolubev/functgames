@@ -188,7 +188,7 @@ function renderSectionFamilySport(content) {
         </div>
       </div>
       <div class="family-register-btn-wrapper">
-        <a class="main-btn family-register-btn disabled">Регистрация завершена</a>
+        <a class="main-btn family-register-btn disabled">Завершено</a>
         <div class="family-regulation-link">
           <a href="assets/Polozhenie_mama,papa,ya_05_07_2025.pdf" target="_blank" class="family-regulation-pdf">Положение о проведении</a>
         </div>
@@ -339,8 +339,7 @@ function renderSectionTitans(content) {
             <img src="assets/images/logo/titans.png" alt="Юные титаны" class="titans-logo">
             <div class="titans-registration-block">
               <h4 class="titans-registration-title">Регистрация</h4>
-              <a href="https://forms.yandex.ru/u/6848135995add50015f8bfe4/" class="main-btn titans-register-btn" target="_blank">Командный зачет</a>
-              <a href="https://forms.yandex.ru/u/686410c490fa7b2573cc4629/" class="main-btn titans-register-btn" target="_blank">Личный зачет</a>
+              <a class="main-btn titans-register-btn disabled">Завершено</a>
             </div>
             <a href="assets/Положение_Юные_Титаны_для_детей_и_подростков_10_06_2025_2.pdf" class="titans-regulation-link" target="_blank">Положение о соревновании</a>
           </div>
@@ -381,7 +380,7 @@ function renderSectionFunctional(content) {
       </div>
       ${s.regulationsLink ? `<a href="${s.regulationsLink}" target="_blank" class="regulations-link">Положение</a>` : ''}
       <div class="moscow-register-btn-wrapper" style="text-align:center; margin: 18px 0 22px 0;">
-        <a href="https://forms.yandex.ru/u/6847e80050569007ccb955a0/" class="main-btn moscow-register-btn" target="_blank">Зарегистрироваться</a>
+        <a class="main-btn moscow-register-btn disabled">Завершено</a>
         <div class="family-regulation-link" style="margin-top: 10px;">
           <a href="assets/Moscow_games_polozhenie.pdf" target="_blank" class="family-regulation-pdf">Положение о проведении</a>
         </div>

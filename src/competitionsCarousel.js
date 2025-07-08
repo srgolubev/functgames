@@ -36,7 +36,7 @@ function renderCompetitionsCarousel() {
           ${c.regulation ? `<a href="${c.regulation}" class="competitions-card-link" target="_blank">Положение</a>` : ''}
           ${c.registerUrl ? 
             (c.registrationClosed ? 
-              `<a class="competitions-card-btn disabled">Регистрация завершена</a>` : 
+              `<a class="competitions-card-btn disabled">Завершено</a>` : 
               `<a href="${c.registerUrl}" class="competitions-card-btn" target="_blank">Зарегистрироваться</a>`
             ) : ''}
         </div>
