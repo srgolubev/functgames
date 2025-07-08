@@ -17,7 +17,7 @@
   "navigation": [
     {"text": "О фестивале", "href": "#about"},
     {"text": "Программа", "href": "#program"},
-    {"text": "Регистрация", "href": "#register"},
+    {"text": "Фото", "href": "#gallery"},
     {"text": "Партнеры", "href": "#partners"}
   ],
   "banner": {
