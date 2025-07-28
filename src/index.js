@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     return;
   }
 
-  // Генерация секций
+  // Генерация секций ${renderSectionProgram(content)}
   app.innerHTML = `
     ${renderHeader(content)}
     ${renderBanner(content)}
@@ -50,7 +50,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     ${renderSectionFamilySport(content)}
     ${renderSectionMainStage(content)} 
     ${renderSectionCompetitions(content)}
-    ${renderSectionProgram(content)}
     ${renderSectionGallery(content)} 
     ${renderSectionActivities(content)}
     ${renderSectionHeadliners(content)}
@@ -131,7 +130,7 @@ function renderBanner(content) {
       <div class="container">
         <div class="banner-inner" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; padding: 2.5rem 1.5rem; gap: 2rem;">
           <div class="banner-text" style="flex:1; min-width:260px; color: #fff;">
-            <h1 style="font-size: 2.8rem; font-family: var(--font-heading); font-weight: 900; margin-bottom: 1rem; line-height: 1.1;">${b.title || ''}</h1>
+            <h1 style="font-size: 2.8rem; font-family: var(--font-heading); font-weight: 900; margin-bottom: 1rem; line-height: 1.1; text-align: left;">${b.title || ''}</h1>
             <div class="banner-date" style="font-size:1.4rem; font-weight:600; margin-bottom:0.5rem;">${b.dateText || ''}</div>
             ${b.locationText ? `<div class="banner-location" style="font-size:1.05rem; font-weight:500; opacity:0.85; margin-bottom:1.2rem; line-height:1.35;">${(b.locationText||'').replace(/\n/g,'<br>')}</div>` : ''}
             <a href="${b.ctaButtonLink || '#'}" class="main-btn banner-cta-turquoise" style="background: var(--color-title); font-size:1.25rem; border-radius: 20px; padding: 0.75rem 2.2rem; box-shadow: 0 2px 12px rgba(43,211,225,0.14);">${b.ctaButtonText || ''}</a>
@@ -216,9 +215,9 @@ function renderSectionFamilySport(content) {
         </div>
       </div>
       <div class="family-register-btn-wrapper">
-        <a class="main-btn family-register-btn disabled">Завершено</a>
+        <a class="main-btn family-register-btn disabled">Скоро</a>
         <div class="family-regulation-link">
-          <a href="assets/Polozhenie_mama,papa,ya_05_07_2025.pdf" target="_blank" class="family-regulation-pdf">Положение о проведении</a>
+          <a href="#" target="_blank" class="family-regulation-pdf">Положение о проведении</a>
         </div>
       </div>
     </section>
@@ -427,9 +426,9 @@ function renderSectionFunctional(content) {
       </div>
       ${s.regulationsLink ? `<a href="${s.regulationsLink}" target="_blank" class="regulations-link">Положение</a>` : ''}
       <div class="moscow-register-btn-wrapper" style="text-align:center; margin: 18px 0 22px 0;">
-        <a class="main-btn moscow-register-btn disabled">Завершено</a>
+        <a class="main-btn moscow-register-btn disabled">Скоро</a>
         <div class="family-regulation-link" style="margin-top: 10px;">
-          <a href="assets/Moscow_games_polozhenie.pdf" target="_blank" class="family-regulation-pdf">Положение о проведении</a>
+          <a href="#" target="_blank" class="family-regulation-pdf">Положение о проведении</a>
         </div>
       </div>
       <div class="gallery">
@@ -559,7 +558,7 @@ function renderSectionImportant(content) {
         <div>${s.locationAccess?.address||''}</div>
         <div>${(s.locationAccess?.directions||'').replace(/\n/g, '<br>')}</div>
         <div style="margin:18px 0 0 0; width:100%; max-width:100%; height:340px; border-radius:14px; overflow:hidden; box-shadow:0 2px 12px rgba(0,0,0,0.08);">
-          <iframe src="https://yandex.ru/map-widget/v1/?ll=37.551640%2C55.719512&z=16&pt=37.551640,55.719512,pm2rdm" width="100%" height="340" frameborder="0" allowfullscreen title="Яндекс.Карта: Северное Спортивный центр"></iframe>
+          <iframe src="https://yandex.ru/map-widget/v1/?ll=37.735675%2C55.708137&z=16&pt=37.735675,55.708137,pm2rdm" width="100%" height="340" frameborder="0" allowfullscreen title="Яндекс.Карта: Северное Спортивный центр"></iframe>
         </div>
       </div>
     </section>
