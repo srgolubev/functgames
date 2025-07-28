@@ -1,42 +1,42 @@
 [
   {
-    "title": "Функциональный фитнес",
+    "title": "Фитнес челлендж",
     "description": "Официальная дисциплина Международной федерации бодибилдинга и фитнеса. Функциональный фитнес , Fitness Challenge, включает в себя выполнение 6-ти упражнений с перерывом между ними по 2 минуты.  Результатом является максимальное количество повторений  в сумме 6-ти упражнений",
     "image": "assets/images/FitnessChallenge.jpg",
-    "regulation": "assets/Polozhenie_FFC_05072025.pdf",
-    "registerUrl": "https://forms.yandex.ru/u/6848116284227c160e51a67d/",
-    "registrationClosed": true
+    "regulation": null,
+    "registerUrl": null,
+    "registrationClosed": false
+  },
+  {
+    "title": "Гиревой спорт",
+    "description": "Жонглирование с гирей",
+    "image": "assets/images/kettlebell.jpg",
+    "regulation": null,
+    "registerUrl": null,
+    "registrationClosed": false
   },
   {
     "title": "Жим лёжа",
     "description": "Состязания проходят под руководством федерации русского жима. Правила выполнения упражнений , вес отягощений и категории указаны в положении о соревнованиях",
     "image": "assets/images/push.jpg",
-    "regulation": "assets/Polozhenie_Moscow_05_07_2025.pdf",
-    "registerUrl": "https://rusgym78.ru/sorevnovaniya/",
-    "registrationClosed": true
+    "regulation": null,
+    "registerUrl": null,
+    "registrationClosed": false
   },
   {
     "title": "Арм рестлинг",
     "description": "Это не просто борьба на руках, это сплав силы, техники, стратегии и выносливости, превращающий, казалось бы, простое соревнование в захватывающее зрелище и требующее от участников невероятной самоотдачи.",
     "image": "assets/images/armwrestling.jpg",
-    "regulation": "https://docs.google.com/document/d/1BZx9jYXcEinFRBsbGZdCHhUF1Fq8CROWgthMS06e1fg",
-    "registerUrl": "https://arm-rate.ru/tournaments/136",
-    "registrationClosed": true
-  },
-  {
-    "title": "Подъем на бицепс",
-    "description": "Базовое упражнение, направленное на развитие и укрепление бицепса, одно из самых известных и популярных упражнений в мире бодибилдинга и фитнеса. Соревнования проходят в формате 10-ти повторений, атлет заявляет вес штанги и выполняет один подход. Результатом является коэффициент суммы поднятых килограммов разделенный на вес спортсмена.",
-    "image": "assets/images/biceps.jpg",
     "regulation": null,
     "registerUrl": null,
-    "registrationClosed": true
+    "registrationClosed": false
   },
   {
-    "title": "Мас-рестлинг",
-    "description": "Это не просто древняя забава, это живое воплощение духа якутского народа, его силы, стойкости и уважения к традициям. Это единоборство, где атлеты, словно богатыри из древних легенд, сходятся в поединке, вооружившись лишь деревянной палкой – мас.",
-    "image": "assets/images/maswrestling.jpg",
-    "regulation": "assets/ИГРЫ_МОСКВЫ_05.07.2025_мас-рестлинг.pdf",
-    "registerUrl": "https://wa.me/+79999890828?text=Здравствуйте!%20Хочу%20подать%20заявку%20на%20турнир%20по%20мас-рестлингу%2005.07.2025г.",
-    "registrationClosed": true
+    "title": "Фитне⁠с - стиль",
+    "description": "Фитнес-стиль — новая категория соревнований, сочетающая элементы фитнес-моделей, пляжного бодибилдинга (Men’s Physique) и атлетизма. Участники демонстрируют гармоничное телосложение, спортивность и сценическую подачу.",
+    "image": "assets/images/fitnessmodel.jpg",
+    "regulation": null,
+    "registerUrl": null,
+    "registrationClosed": false
   }
 ]

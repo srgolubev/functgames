@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     ${renderSectionAbout(content)}
     ${renderSectionFunctional(content)}
     ${renderSectionFamilySport(content)}
-    ${renderSectionTitans(content)}
+    ${renderSectionMainStage(content)} 
     ${renderSectionCompetitions(content)}
     ${renderSectionProgram(content)}
     ${renderSectionGallery(content)} 
@@ -243,11 +243,11 @@ function renderSectionCompetitions(content) {
 function renderSectionActivities(content) {
   // Жёстко заданные активности и изображения
   const activities = [
-    { img: 'assets/images/punch@2x.png', label: 'Сила удара' },
-    { img: 'assets/images/jump@2x.png', label: 'Прыжок в высоту' },
-    { img: 'assets/images/greblya@2x.png', label: 'Гребля' },
-    { img: 'assets/images/airbike@2x.png', label: 'Айр-байк' },
-    { img: 'assets/images/basket@2x.png', label: 'Регби или баскетбол' },
+    { img: 'assets/images/powerful.jpg', label: 'Самый мощный' },
+    { img: 'assets/images/fast.jpg', label: 'Самый быстрый' },
+    { img: 'assets/images/hardy.jpg', label: 'Самый выносливый' },
+    { img: 'assets/images/accurate.jpg', label: 'Самый точный' },
+    { img: 'assets/images/strong.jpg', label: 'Самый сильный' },
   ];
   return `
     <section id="activities" class="section activities-section">
@@ -323,6 +323,25 @@ function renderSectionHeadliners(content) {
 }
 
 // TITANS SECTION
+// MAIN STAGE
+function renderSectionMainStage(content) {
+  const s = content.mainStageSection || {};
+  return `
+    <section id="main-stage" class="section main-stage-section">
+      <div class="main-stage-content">
+        <div class="main-stage-text">
+          <h2 class="section-title">${s.title}</h2>
+          <p>${s.description}</p>
+        </div>
+        <div class="main-stage-image">
+          <img src="${s.image}" alt="${s.title}">
+        </div>
+      </div>
+    </section>
+  `;
+}
+
+// TITANS
 function renderSectionTitans(content) {
   const s = content.titansSection || {};
   return `
