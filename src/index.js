@@ -202,22 +202,10 @@ function renderSectionFamilySport(content) {
         <div class="family-info-main">
 
           <div class="family-desc">${s.description || ''}</div>
-          <div class="family-categories">
-            <b>Категории:</b>
-            <ul>
-              ${(s.categories || []).map(cat => `<li class="cat-${cat.icon}">${cat.text}</li>`).join('')}
-            </ul>
-          </div>
           <div class="family-prizes">${s.prizesText || ''}</div>
         </div>
         <div class="family-info-photos">
           ${(s.images || []).map(img => `<img src="${img}" alt="Семейный фестиваль" class="family-photo">`).join('')}
-        </div>
-      </div>
-      <div class="family-register-btn-wrapper">
-        <a class="main-btn family-register-btn disabled">Скоро</a>
-        <div class="family-regulation-link">
-          <a href="#" target="_blank" class="family-regulation-pdf">Положение о проведении</a>
         </div>
       </div>
     </section>
@@ -400,35 +388,20 @@ function renderSectionFunctional(content) {
   const s = content.functionalGamesSection || {};
   return `
     <section id="functionalGames" class="section functional">
-      ${s.logo ? `<img src="${s.logo}" alt="Functional Games" class="section-logo">` : ''}
+      ${s.logo ? `<img src="${s.logo2}" alt="Functional Games" class="section-logo">` : ''}
       <h2>${s.title||''}</h2>
       <div class="desc">${s.description||''}</div>
       <div class="context">${s.context||''}</div>
       <div class="participants-info">${s.participantsInfo ? `${s.participantsInfo.total}, ${s.participantsInfo.spectators}` : ''}</div>
-      <div class="formats">
-        <b>Форматы:</b>
-        <div class="format-cards format-cards-center">
-          ${(s.formats||[]).map(f=>`
-            <div class="format-card">
-              <div class="format-icon">${f.name.includes('Команд') ? '🏆' : '🥇'}</div>
-              <div class="format-title">${f.name}</div>
-              ${f.description ? `<div class="format-desc">${f.description}</div>` : ''}
-              ${f.conditions ? `<div class="format-conditions">${f.conditions}</div>` : ''}
-            </div>
-          `).join('')}
-        </div>
-      </div>
-      <div class="requirements"><b>Требования:</b> ${(s.participantRequirements||[]).join(', ')}</div>
-      <div class="structure"><b>Структура:</b> ${s.competitionStructure||''}</div>
+      <div class="requirements"><b>Не допускаются:</b> ${(s.participantRequirements||[]).join(', ')}</div>
       <div class="obstacle">
         <b>Полоса препятствий:</b> ${(s.obstacleCourse?.stages||[]).join(', ')}
         <div>${s.obstacleCourse?.equipmentSponsor||''}</div>
       </div>
-      ${s.regulationsLink ? `<a href="${s.regulationsLink}" target="_blank" class="regulations-link">Положение</a>` : ''}
       <div class="moscow-register-btn-wrapper" style="text-align:center; margin: 18px 0 22px 0;">
-        <a class="main-btn moscow-register-btn disabled">Скоро</a>
+        <a href="${s.registerUrl}"class="main-btn moscow-register-btn">Регистрация</a>
         <div class="family-regulation-link" style="margin-top: 10px;">
-          <a href="#" target="_blank" class="family-regulation-pdf">Положение о проведении</a>
+          <a href="${s.regulationsLink}" target="_blank" class="family-regulation-pdf">Положение о проведении</a>
         </div>
       </div>
       <div class="gallery">
