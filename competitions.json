@@ -4,7 +4,7 @@
     "description": "Официальная дисциплина Международной федерации бодибилдинга и фитнеса. Функциональный фитнес , Fitness Challenge, включает в себя выполнение 6-ти упражнений с перерывом между ними по 2 минуты.  Результатом является максимальное количество повторений  в сумме 6-ти упражнений",
     "image": "assets/images/FitnessChallenge.jpg",
     "regulation": null,
-    "registerUrl": null,
+    "registerUrl": "https://forms.yandex.ru/u/6885effbd04688109a011170",
     "registrationClosed": false
   },
   {
@@ -27,16 +27,16 @@
     "title": "Арм рестлинг",
     "description": "Это не просто борьба на руках, это сплав силы, техники, стратегии и выносливости, превращающий, казалось бы, простое соревнование в захватывающее зрелище и требующее от участников невероятной самоотдачи.",
     "image": "assets/images/armwrestling.jpg",
-    "regulation": null,
-    "registerUrl": null,
+    "regulation": "https://docs.google.com/document/d/1J_Ctrtmab7gloPLOf-yhj9-aYuvZeRZrnqIBTIAnXwo/edit?usp=sharing",
+    "registerUrl": "https://arm-rate.ru/tournaments/145",
     "registrationClosed": false
   },
   {
-    "title": "Фитне⁠с - стиль",
+    "title": "Атлетизм",
     "description": "Фитнес-стиль — новая категория соревнований, сочетающая элементы фитнес-моделей, пляжного бодибилдинга (Men’s Physique) и атлетизма. Участники демонстрируют гармоничное телосложение, спортивность и сценическую подачу.",
     "image": "assets/images/fitnessmodel.jpg",
     "regulation": null,
-    "registerUrl": null,
+    "registerUrl": "https://forms.yandex.ru/u/6885f430d0468810aa0111da",
     "registrationClosed": false
   }
 ]
