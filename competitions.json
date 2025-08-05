@@ -1,26 +1,34 @@
 [
   {
-    "title": "Фитнес челлендж",
-    "description": "Официальная дисциплина Международной федерации бодибилдинга и фитнеса. Функциональный фитнес , Fitness Challenge, включает в себя выполнение 6-ти упражнений с перерывом между ними по 2 минуты.  Результатом является максимальное количество повторений  в сумме 6-ти упражнений",
+    "title": "функциональный фитнес",
+    "description": "Официальная дисциплина Международной федерации бодибилдинга и фитнеса. Функциональный фитнес включает в себя выполнение 6-ти упражнений с перерывом между ними по 2 минуты.  Результатом является максимальное количество повторений  в сумме 6-ти упражнений",
     "image": "assets/images/FitnessChallenge.jpg",
     "regulation": null,
     "registerUrl": "https://forms.yandex.ru/u/6885effbd04688109a011170",
     "registrationClosed": false
   },
   {
-    "title": "Гиревой спорт",
-    "description": "Жонглирование с гирей",
+    "title": "Гиревой вызов",
+    "description": "ДИСЦИПЛИНЫ:\n- Длинный цикл 5 минут\n- Армейский гиревой рывок 12 минут\n\nВЕСОВЫЕ КАТЕГОРИИ:\n- Мужчины 78, 95, 95+\n- Женщины 58, 58+",
     "image": "assets/images/kettlebell.jpg",
-    "regulation": null,
-    "registerUrl": null,
+    "regulation": "assets/Polozhenie_DF_2025_sk_Moskvich.docx",
+    "registerUrl": "mailto:mo-vfgs@mail.ru",
     "registrationClosed": false
   },
   {
     "title": "Жим лёжа",
-    "description": "Состязания проходят под руководством федерации русского жима. Правила выполнения упражнений , вес отягощений и категории указаны в положении о соревнованиях",
+    "description": "МАСТЕРСКИЙ ТУРНИР ПО ЖИМУ ШТАНГИ ЛЁЖА\nРУССКИЙ ЖИМ И СИЛОВЫЕ ВИДЫ СПОРТА\nКЛАССИЧЕСКИЙ РУССКИЙ ЖИМ\nРУССКАЯ ТРОЙКА\nНАРОДНЫЙ ЖИМ",
     "image": "assets/images/push.jpg",
     "regulation": null,
-    "registerUrl": null,
+    "registerUrl": "https://rusgym33.ru/",
+    "registrationClosed": false
+  },
+  {
+    "title": "Ягодичный мост",
+    "description": "КАТЕГОРИИ:\n- Девушки до 21 года\n- Юниоры до 21 года\n- Женщины\n- Мужчины",
+    "image": "assets/images/buttbridge.webp",
+    "regulation": null,
+    "registerUrl": "https://forms.yandex.ru/u/6885f430d0468810aa0111da/",
     "registrationClosed": false
   },
   {
