@@ -235,6 +235,7 @@ function renderSectionActivities(content) {
     { img: 'assets/images/hardy.jpg', label: 'Самый выносливый' },
     { img: 'assets/images/accurate.jpg', label: 'Самый точный' },
     { img: 'assets/images/strong.jpg', label: 'Самый сильный' },
+    { img: 'assets/images/fitrock.jpg', label: 'Фитрок' },
   ];
   return `
     <section id="activities" class="section activities-section">
@@ -256,24 +257,9 @@ function renderSectionHeadliners(content) {
   // Жёстко заданные хедлайнеры
   const headliners = [
     {
-      img: 'assets/images/Bobylev.png',
-      name: 'Николай Бобылев',
-      desc: 'Победитель шоу «Титаны», учитель физкультуры и спортсмен, выступающий в армрестлинге, пауэрлифтинге и других силовых видах спорта.'
-    },
-    {
-      img: 'assets/images/Stoun.png',
-      name: 'Александр «Стоун» Зарубин',
-      desc: 'Чемпион России по боевым искусствам, Чемпион Кубка мира, боец ММА, участник шоу «Титаны».'
-    },
-    {
-      img: 'assets/images/Vlasov.png',
-      name: 'Роман Власов',
-      desc: 'Российский спортсмен, борец греко-римского стиля, двукратный олимпийский чемпион, участник шоу «Титаны».'
-    },
-    {
-      img: 'assets/images/Krukov.png',
-      name: 'Никита Крюков',
-      desc: 'Олимпийский чемпион, трёхкратный чемпион мира в спринте, заслуженный мастер спорта России, участник шоу «Титаны».'
+      img: 'assets/images/AYashankin.jpg',
+      name: 'Александр Яшанькин',
+      desc: '12-кратный чемпион мира и 40-кратный чемпион России по бодибилдингу, заслуженный тренер и мастер спорта СССР'
     },
     {
       img: 'assets/images/Kovalchuk.png',
@@ -281,14 +267,19 @@ function renderSectionHeadliners(content) {
       desc: 'Нападающий национальной сборной России, заслуженный мастер спорта, олимпийский чемпион, двукратный чемпион мира, пятикратный призёр чемпионатов мира.'
     },
     {
-      img: 'assets/images/Nagornaya.png',
-      name: 'Дарья Нагорная',
-      desc: 'Российская гимнастка, серебряный призёр Олимпийских игр, чемпионка мира, участница шоу «Титаны».'
-    },
-    {
       img: 'assets/images/Pluzhnikova.png',
       name: 'Дарья Плужникова',
       desc: 'Российская культуристка, бодибилдер, блогер, мировая рекордсменка, участница шоу «Титаны».'
+    },
+    {
+      img: 'assets/images/Tagiev.png',
+      name: 'Низами Тагиев',
+      desc: 'профессиональный пауэрлифтер, борец, самый сильный бицепс в мире'
+    },
+    {
+      img: 'assets/images/Rabadanov.jpg',
+      name: 'Магомедрасул Рабаданов',
+      desc: 'Победитель Шоу ТИТАНЫ, Полуфиналист Руский НИНДЗЯ, Экшн, Актер, Каскадер'
     }
   ];
   return `
