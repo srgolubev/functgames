@@ -19,7 +19,7 @@ jobs:
       - name: Deploy to VPS via rsync
         uses: burnett01/rsync-deployments@v2.0.0
         with:
-          switches: -avzr --delete
+          switches: -avzr --delete --exclude=.git --exclude=.github
           path: ./
           remote_path: /var/www/mssprt.site/
           remote_host: ${{ secrets.VPS_HOST }}

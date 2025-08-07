@@ -1,0 +1,26 @@
+# Protect sensitive directories and files
+<FilesMatch "^\.git">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Protect dot files/directories (like .git, .github, etc)
+RedirectMatch 404 /\.git
+RedirectMatch 404 /\.github
+
+# Deny access to sensitive files
+<FilesMatch "(^\.|config\.php|\.env|\.htaccess|\.htpasswd)">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Disable directory browsing
+Options -Indexes
+
+# Protect against common exploits
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{REQUEST_URI} ^/\.git [NC,OR]
+    RewriteCond %{REQUEST_URI} ^/\.github [NC]
+    RewriteRule .* - [F,L]
+</IfModule>
